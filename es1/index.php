@@ -33,18 +33,35 @@ $matches = [
 
 ];
 
-for ($i = 0; $i < count($matches); $i++) { 
+// for ($i = 0; $i < count($matches); $i++) { 
     
-    $stampa_corrente_team_in_casa = $matches[$i]['team in casa'];
-    $stampa_corrente_team_fuori_casa = $matches[$i]['team fuori casa'];
-    $stampa_corrente_goal_team_in_casa = $matches[$i]['goal team in casa'];
-    $stampa_corrente_goal_team_fuori_casa = $matches[$i]['goal team fuori casa'];
+//     $stampa_corrente_team_in_casa = $matches[$i]['team in casa'];
+//     $stampa_corrente_team_fuori_casa = $matches[$i]['team fuori casa'];
+//     $stampa_corrente_goal_team_in_casa = $matches[$i]['goal team in casa'];
+//     $stampa_corrente_goal_team_fuori_casa = $matches[$i]['goal team fuori casa'];
 
-    echo $stampa_corrente_team_in_casa . ' ' . $stampa_corrente_team_fuori_casa . ' ' . $stampa_corrente_goal_team_in_casa
-     . '-' . $stampa_corrente_goal_team_fuori_casa . '<br>';
+//     echo $stampa_corrente_team_in_casa . ' ' . $stampa_corrente_team_fuori_casa . ' ' . $stampa_corrente_goal_team_in_casa
+//      . '-' . $stampa_corrente_goal_team_fuori_casa . '<br>';
 
-}
-
-
-
+// }
 ?>
+
+<ul>
+
+    <?php for ($i=0; $i < count($matches); $i++) { ?>
+
+    <?php   $this_partita = $matches[$i];     ?>    
+
+            
+
+    <li>  <?php echo $this_partita['team in casa'];  ?>
+        - <?php echo $this_partita['team fuori casa'] ?> 
+        <?php echo $this_partita['goal team in casa']?> 
+        <?php echo '- ' . $this_partita['goal team fuori casa'] ?>
+    </li>
+
+
+    <?php } ?>
+
+
+</ul>
